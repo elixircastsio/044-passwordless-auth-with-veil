@@ -1,0 +1,24 @@
+<h2>Record Store</h2>
+
+<%= link "Add Album", to: album_path(@conn, :new) %>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Artist</th>
+      <th>Title</th>
+      <th>Year</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+  <%= for album <- @albums do %>
+    <tr>
+      <td><%= album.artist %></td>
+      <td><%= album.title %></td>
+      <td><%= album.year %></td>
+      <td><%= link "View", to: album_path(@conn, :show, album) %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

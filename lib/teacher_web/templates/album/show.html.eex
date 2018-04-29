@@ -1,0 +1,23 @@
+<h2><%= @album.title %> by <%= @album.artist %></h2>
+
+<ul class="album-info">
+
+  <li>
+    <strong>Price:</strong>
+    <%= cents_to_dollars(@album.price) %>
+  </li>
+
+  <li>
+    <strong>Year:</strong>
+    <%= @album.year %>
+  </li>
+
+  <li>
+    <strong>Summary:</strong>
+    <%= @album.summary %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: album_path(@conn, :edit, @album) %></span>
+<span><%= link "Back", to: album_path(@conn, :index) %></span>
